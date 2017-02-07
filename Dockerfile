@@ -25,6 +25,7 @@ RUN pip install --upgrade pip pipenv ipdb
 COPY Pipfile* ./
 RUN pipenv lock
 RUN pipenv install --system
+RUN pip install django_coverage_plugin==1.3.1
 
 ADD . /code/
 
