@@ -20,16 +20,11 @@ RUN npm install -g \
 
 RUN ln -s `which nodejs` /usr/bin/node
 
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip pipenv ipdb
 
-COPY requirements.txt ./
-COPY requirements-dev.txt ./
-RUN pip install --no-cache-dir -r requirements-dev.txt
-
-COPY requirements-plugins.txt ./
-RUN pip install --no-cache-dir -r requirements-plugins.txt
-
-RUN pip install ipdb
+COPY Pipfile* ./
+RUN pipenv lock
+RUN pipenv install --system
 
 ADD . /code/
 
