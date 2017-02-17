@@ -23,6 +23,8 @@ setup(
     license='MIT',
     install_requires=requirements + requirements_plugins,
     packages=find_packages(),
+    data_files=[(".",
+             ["static/*"])],
     include_package_data=True,
     zip_safe=False
 )
