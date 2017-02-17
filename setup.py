@@ -25,6 +25,9 @@ setup(
     packages=find_packages(),
     data_files=[(".",
              ["static/*"])],
+    package_data={'': [
+        'static/**',
+    ]},
     include_package_data=True,
     zip_safe=False
 )
