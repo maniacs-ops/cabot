@@ -79,7 +79,7 @@ STATIC_URL = '%s/static/' % URL_PREFIX
 COMPRESS_URL = STATIC_URL
 
 # Additional locations of static files
-STATICFILES_DIRS = [os.path.join(PROJECT_ROOT, 'static')]
+STATIC_ROOT = os.path.join(PROJECT_ROOT, os.path.pardir, 'static/')
 
 if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
