@@ -69,7 +69,7 @@ MEDIA_URL = '%s/media/' % URL_PREFIX
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, '.collectstatic/')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, os.path.pardir, 'static/')
 
 COMPRESS_ROOT = STATIC_ROOT
 
@@ -79,7 +79,7 @@ STATIC_URL = '%s/static/' % URL_PREFIX
 COMPRESS_URL = STATIC_URL
 
 # Additional locations of static files
-STATIC_ROOT = os.path.join(PROJECT_ROOT, os.path.pardir, 'static/')
+STATICFILES_DIRS = [os.path.join(PROJECT_ROOT, 'static')]
 
 if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
