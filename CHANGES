@@ -1,6 +1,7 @@
 master
 ------
 
+* Add first time setup page
 * Update production.env.example email settings
 * Convert environment vars to boolean nicely
 
